@@ -49,3 +49,37 @@ cadena5 = "HolaMundo"
 cadena6 = "Hola Mundo"  
 print(f"¿La cadena '{cadena5}' contiene solo letras?", cadena5.isalpha())
 print(f"¿La cadena '{cadena6}' contiene solo letras?", cadena6.isalpha())
+
+# COUNT: cuenta el número de veces que una subcadena aparece en la cadena original
+subcadena3 = "o"
+conteo = cadena1.count(subcadena3)
+print(f"La subcadena '{subcadena3}' aparece {conteo} veces en la cadena original.")
+
+# LEN: devuelve la longitud de la cadena, es decir, el número de caracteres que contiene
+longitud = len(cadena1)
+print(f"La longitud de la cadena original es: {longitud} caracteres.")
+
+# STARTSWITH: devuelve True si la cadena original comienza con la subcadena especificada, y False en caso contrario
+subcadena4 = "hola"
+subcadena5 = "Hola"
+print(f"¿La cadena original comienza con '{subcadena4}'?", cadena1.startswith(subcadena4))
+print(f"¿La cadena original comienza con '{subcadena5}'?", cadena1.startswith(subcadena5))
+
+# ENDSWITH: devuelve True si la cadena original termina con la subcadena especificada, y False en caso contrario
+subcadena6 = "Dalto"
+subcadena7 = "dalto"
+print(f"¿La cadena original termina con '{subcadena6}'?", cadena1.endswith(subcadena6))
+print(f"¿La cadena original termina con '{subcadena7}'?", cadena1.endswith(subcadena7))
+
+# REPLACE: reemplaza todas las apariciones de una subcadena por otra subcadena especificada
+subcadena8 = "Dalto"
+nueva_subcadena = "Python"
+cadena_modificada = cadena1.replace(subcadena8, nueva_subcadena)
+print("Cadena original:", cadena1)
+print("Cadena modificada:", cadena_modificada)
+
+# SPLIT: divide la cadena en una lista de subcadenas utilizando un separador especificado (por defecto es el espacio)
+separador = " "
+subcadenas = cadena1.split(separador)
+print("Cadena original:", cadena1)
+print("Subcadenas:", subcadenas)
