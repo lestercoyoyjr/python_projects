@@ -6,7 +6,7 @@ sum_of_numbers = sum(numbers)
 largest_number = max(numbers)
 smallest_number = min(numbers)
 average_of_numbers = sum_of_numbers / len(numbers)
-addNum = numbers.append(99)
+numbers.append(99)
 
 # Print
 print("Sum of numbers:", sum_of_numbers)
@@ -16,7 +16,7 @@ print("Average of numbers:", average_of_numbers, "\n" )
 print("List after adding a number:", numbers, "\n")
 
 # remove
-removeNum = numbers.remove(15)
+numbers.remove(15)
 print("List after removing a number:", numbers, "\n")
 
 
@@ -24,24 +24,26 @@ print("List after removing a number:", numbers, "\n")
 # Tuple holding person's name, age and city
 print("\nTuple exercise")
 person = ("John Doe", 30, "New York")
-name = person[0]
-age = person[1]
-city = person[2]
-print(f"{name} is {age} years old and lives in {city}")
+for item in person:
+    print(f"{item}")
 
 # Dictionary exercise
 print("\nDictionary exercise")
 text = "the cat and the dog and the bird"
-count = {
-    "the": text.count("the"),
-    "cat": text.count("cat"),
-    "and": text.count("and"),
-    "dog": text.count("dog"),
-    "bird": text.count("bird")
-}
 
-for word, occurrences in count.items():
-    print(f"The word '{word}' appears {occurrences} times in the text.")
+textSplit = text.split()
+
+count={}
+
+
+for word in textSplit:
+    if word not in count:
+        count[word] = 1
+    else:
+        count[word] += 1
+
+for word, times in count.items():
+    print(f"the word '{word}' appears {times} times in the text.")
 
 
 # Dictionary loockup
@@ -84,13 +86,15 @@ students = [
 
 full_name = f"Name: {students[0]['firstName']} {students[0]['lastName']}"
 print(full_name, "\n")
-highest_avg_grade = []
 
+best_name = ""
+best_avg_grade = 0
 for student in students:
     full_name = f"Name: {student['firstName']} {student['lastName']}"
-    print(full_name)
+    print(full_name, "Grades:", student['grades'])
     average_grade = sum(student['grades']) / len(student['grades'])
-    print(f"Average grade: {average_grade:.2f}\n")
-    highest_avg_grade.append(average_grade)
+    if average_grade > best_avg_grade:
+        best_avg_grade = average_grade
+        best_name = full_name
 
-print("Highest average grade:", max(highest_avg_grade), "\n")
+print(f"Highest average grade: {best_name}, {best_avg_grade:.2f}", "\n")
