@@ -16,6 +16,9 @@ print("Cadena en mayúsculas:", cadena1.upper())
 print("Cadena en minúsculas:", cadena1.lower())
 print("Cadena con la primera letra en mayúscula:", cadena1.capitalize())
 
+contar_coincidencias = cadena1.count("o".lower())
+print("\n\n La letra 'o' aparece", contar_coincidencias, "veces en la cadena original")
+
 # FIND: busca una subcadena dentro de la cadena y devuelve el índice de la primera aparición, o -1 si no se encuentra
 subcadena1 = "Dalto"
 subcadena2 = "Python"
