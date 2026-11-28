@@ -1,88 +1,65 @@
-cadena1 = "hola soy Dalto"
+# metodos de cadenas
+
+cadena1 = "Hola maquinola soy Dalto"
 cadena2 = "Bienvenido maquinola"
-
-# Métodos de cadenas
-# DIR: muestra los métodos disponibles para un tipo de dato específico
-print("Metodos disponibles para cadenas:")
-print(dir(cadena1))
-print("Metodos disponibles para enteros:")
-print(dir(4)) # Muestra los métodos disponibles para el tipo de dato entero
-
-# UPPER: convierte todos los caracteres de la cadena a mayúsculas
-# LOWER: convierte todos los caracteres de la cadena a minúsculas
-# CAPITALIZE: convierte el primer carácter de la cadena a mayúscula y el resto a minúsculas
-print("Cadena original:", cadena1)
-print("Cadena en mayúsculas:", cadena1.upper())
-print("Cadena en minúsculas:", cadena1.lower())
-print("Cadena con la primera letra en mayúscula:", cadena1.capitalize())
-
-contar_coincidencias = cadena1.count("o".lower())
-print("\n\n La letra 'o' aparece", contar_coincidencias, "veces en la cadena original")
-
-# FIND: busca una subcadena dentro de la cadena y devuelve el índice de la primera aparición, o -1 si no se encuentra
-subcadena1 = "Dalto"
-subcadena2 = "Python"
-indice = cadena1.find(subcadena1)
-if indice != -1:
-    print(f"La subcadena '{subcadena1}' se encuentra en la cadena original en el índice {indice}.")
-else:
-    print(f"La subcadena '{subcadena1}' no se encuentra en la cadena original.")
-
-indice = cadena1.find(subcadena2)
-if indice != -1:
-    print(f"La subcadena '{subcadena2}' se encuentra en la cadena original en el índice {indice}.")
-else:
-    print(f"La subcadena '{subcadena2}' no se encuentra en la cadena original.")
-
-# INDEX: busca una subcadena dentro de la cadena y devuelve el índice de la primera aparición, o lanza una excepción si no se encuentra
-try:
-    indice = cadena1.index(subcadena1)
-    print(f"La subcadena '{subcadena1}' se encuentra en la cadena original en el índice {indice}.")
-except ValueError:
-    print(f"La subcadena '{subcadena1}' no se encuentra en la cadena original.")
-
-#ISNUMERIC: devuelve True si todos los caracteres de la cadena son dígitos, y False en caso contrario
 cadena3 = "12345"
-cadena4 = "12345abc"
-print(f"¿La cadena '{cadena3}' es numérica?", cadena3.isnumeric())
-print(f"¿La cadena '{cadena4}' es numérica?", cadena4.isnumeric())
+cadena4 = 12345
 
-# ISALPHA: devuelve True si todos los caracteres de la cadena son letras, y False en caso contrario
-cadena5 = "HolaMundo"
-cadena6 = "Hola Mundo"  
-print(f"¿La cadena '{cadena5}' contiene solo letras?", cadena5.isalpha())
-print(f"¿La cadena '{cadena6}' contiene solo letras?", cadena6.isalpha())
+print ("\n", dir(cadena1)) # muestra los métodos disponibles para un tipo de dato específico
 
-# COUNT: cuenta el número de veces que una subcadena aparece en la cadena original
-subcadena3 = "o"
-conteo = cadena1.count(subcadena3)
-print(f"La subcadena '{subcadena3}' aparece {conteo} veces en la cadena original.")
+resultado1 = cadena1.upper() # convierte todos los caracteres de la cadena a mayúsculas
+print("\n", resultado1)
 
-# LEN: devuelve la longitud de la cadena, es decir, el número de caracteres que contiene
-longitud = len(cadena1)
-print(f"La longitud de la cadena original es: {longitud} caracteres.")
+resultado2 = cadena1.lower() # convierte todos los caracteres de la cadena a minúsculas
+print("\n", resultado2)
 
-# STARTSWITH: devuelve True si la cadena original comienza con la subcadena especificada, y False en caso contrario
-subcadena4 = "hola"
-subcadena5 = "Hola"
-print(f"¿La cadena original comienza con '{subcadena4}'?", cadena1.startswith(subcadena4))
-print(f"¿La cadena original comienza con '{subcadena5}'?", cadena1.startswith(subcadena5))
 
-# ENDSWITH: devuelve True si la cadena original termina con la subcadena especificada, y False en caso contrario
-subcadena6 = "Dalto"
-subcadena7 = "dalto"
-print(f"¿La cadena original termina con '{subcadena6}'?", cadena1.endswith(subcadena6))
-print(f"¿La cadena original termina con '{subcadena7}'?", cadena1.endswith(subcadena7))
+resultado3 = resultado2.capitalize() # convierte el primer carácter de la cadena a mayúscula y el resto a minúsculas
+print("\n", resultado3)
 
-# REPLACE: reemplaza todas las apariciones de una subcadena por otra subcadena especificada
-subcadena8 = "Dalto"
-nueva_subcadena = "Python"
-cadena_modificada = cadena1.replace(subcadena8, nueva_subcadena)
-print("Cadena original:", cadena1)
-print("Cadena modificada:", cadena_modificada)
+busqueda_find = cadena1.find("a")
+print("\n",busqueda_find) # busca una subcadena dentro de la cadena y devuelve el índice de la primera aparición, o -1 si no se encuentra
 
-# SPLIT: divide la cadena en una lista de subcadenas utilizando un separador especificado (por defecto es el espacio)
-separador = " "
-subcadenas = cadena1.split(separador)
-print("Cadena original:", cadena1)
-print("Subcadenas:", subcadenas)
+busqueda_index = cadena1.index("a")
+print("\n",busqueda_index) # busca una subcadena dentro de la cadena y devuelve el índice de la primera aparición, o lanza una excepción si no se encuentra
+
+# diferencia entre find e index: find devuelve -1 si no encuentra la subcadena, mientras que index lanza una excepción ValueError.
+
+# isnumeric
+ # devuelve True si todos los caracteres de la cadena son dígitos, y False en caso contrario
+print("\n",cadena1.isnumeric())
+print("\n",cadena3.isnumeric())
+print("\n",str(cadena4).isnumeric()) # convierte el entero a cadena antes de llamar al método isnumeric, ya que es un método de cadenas y no de enteros.
+
+# isalpha
+cadena5 = "vjiosd"
+print("\n",cadena1.isalpha())
+print("\n",cadena3.isalpha())
+print("\n",str(cadena5).isalpha()) # es true porque es alfanumerico
+
+# count
+contar_coincidencias = cadena1.count("a") # cuenta el número de veces que aparece una subcadena dentro de la cadena
+print("\n",contar_coincidencias)
+contar_caracteres = len(cadena1) # cuenta el número de caracteres de la cadena
+print("\n",contar_caracteres)
+
+
+# verificamos si una cadena empieza con una subcadena
+empeiza_con = cadena1.startswith("Hola")
+print("\n",empeiza_con)
+
+# verificamos si una cadena termina con una subcadena
+termina_con = cadena1.endswith("Dalto")
+print("\n",termina_con)
+
+
+# remplazar una subcadena por otra
+reemplazar_texto = cadena1.replace("maquinola", "computadora")
+print("\n",reemplazar_texto)
+
+# separar la cadena
+separar_texto = cadena1.split() # separa la cadena en una lista de subcadenas
+print("\n",separar_texto)
+separar_texto = cadena1.split("soy") # separa la cadena en una lista de subcadenas por el caracter especificado
+print("\n",separar_texto)
+print("\n",type(separar_texto)) # es una lista
